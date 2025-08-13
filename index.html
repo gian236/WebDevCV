@@ -14,7 +14,7 @@
     header {
       background-color: white;
       max-width: 600px;
-      margin: 40px auto;
+      margin: 40px auto 20px;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -37,13 +37,70 @@
       font-size: 1.2rem;
       color: #666;
     }
+    section {
+      max-width: 600px;
+      background-color: white;
+      margin: 0 auto 40px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 8px;
+    }
+    section h3 {
+      margin-top: 20px;
+      color: #34495e;
+    }
+    ul {
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 6px;
+      font-size: 1rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="gpra.jpg" alt="Foto de Gian Paolo Robelo Ávila" />
     <h1>Gian Paolo Robelo Ávila</h1>
-    <p>Estudiante de Computer Science en la Universidad Francisco Marroquín | Guatemala | 21 años</p>
+    <p>Estudiante de Computer Science</p>
   </header>
+
+  <section>
+    <h2>Tecnologías Usadas</h2>
+
+    <h3>Bases de Datos</h3>
+    <ul>
+      <li>Redis</li>
+      <li>ElasticSearch</li>
+      <li>PostgreSQL</li>
+      <li>SQLite</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+    </ul>
+
+    <h3>Contenedores y Orquestación</h3>
+    <ul>
+      <li>Docker</li>
+    </ul>
+
+    <h3>Diseño</h3>
+    <ul>
+      <li>Figma</li>
+    </ul>
+
+    <h3>Nube</h3>
+    <ul>
+      <li>AWS</li>
+      <li>S3</li>
+      <li>Azure</li>
+    </ul>
+  </section>
 </body>
 </html>
