@@ -54,14 +54,18 @@
       margin-top: 20px;
       color: #34495e;
     }
-    ul {
-      margin-top: 8px;
-      padding-left: 20px;
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
     }
-    ul li {
-      margin-bottom: 6px;
-      font-size: 1rem;
-      color: #555;
+    .chip {
+      background-color: #e0e0e0;
+      padding: 8px 12px;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      color: #333;
     }
   </style>
 </head>
@@ -76,51 +80,67 @@
     <h2>Tecnologías Usadas</h2>
 
     <h3>Bases de Datos</h3>
-    <ul>
-      <li>Redis</li>
-      <li>ElasticSearch</li>
-      <li>PostgreSQL</li>
-      <li>SQLite</li>
-      <li>MySQL</li>
-      <li>MongoDB</li>
-    </ul>
+    <div class="chips">
+      <div class="chip">Redis</div>
+      <div class="chip">ElasticSearch</div>
+      <div class="chip">PostgreSQL</div>
+      <div class="chip">SQLite</div>
+      <div class="chip">MySQL</div>
+      <div class="chip">MongoDB</div>
+    </div>
 
     <h3>Contenedores y Orquestación</h3>
-    <ul>
-      <li>Docker</li>
-    </ul>
+    <div class="chips">
+      <div class="chip">Docker</div>
+    </div>
 
     <h3>Diseño</h3>
-    <ul>
-      <li>Figma</li>
-    </ul>
+    <div class="chips">
+      <div class="chip">Figma</div>
+    </div>
 
     <h3>Nube</h3>
-    <ul>
-      <li>AWS</li>
-      <li>S3</li>
-      <li>Azure</li>
-    </ul>
+    <div class="chips">
+      <div class="chip">AWS</div>
+      <div class="chip">S3</div>
+      <div class="chip">Azure</div>
+    </div>
   </section>
 
   <section>
     <h2>Lenguajes de Programación</h2>
-    <ul>
-      <li>C</li>
-      <li>C#</li>
-      <li>C++</li>
-      <li>Java</li>
-      <li>JavaScript</li>
-      <li>TypeScript</li>
-      <li>CSS</li>
-      <li>HTML</li>
-      <li>Python</li>
-      <li>R</li>
-      <li>Matlab</li>
-      <li>Octave</li>
-      <li>Bash</li>
-      <li>Powershell</li>
-    </ul>
+    <div class="chips">
+      <div class="chip">C</div>
+      <div class="chip">C#</div>
+      <div class="chip">C++</div>
+      <div class="chip">Java</div>
+      <div class="chip">JavaScript</div>
+      <div class="chip">TypeScript</div>
+      <div class="chip">CSS</div>
+      <div class="chip">HTML</div>
+      <div class="chip">Python</div>
+      <div class="chip">R</div>
+      <div class="chip">Matlab</div>
+      <div class="chip">Octave</div>
+      <div class="chip">Bash</div>
+      <div class="chip">Powershell</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Soft Skills</h2>
+    <div class="chips">
+      <div class="chip">Trabajo en equipo</div>
+      <div class="chip">Resolución de problemas</div>
+      <div class="chip">Adaptabilidad</div>
+      <div class="chip">Comunicación</div>
+      <div class="chip">Organización</div>
+      <div class="chip">Gestión del tiempo</div>
+      <div class="chip">Curiosidad</div>
+      <div class="chip">Aprendizaje continuo</div>
+      <div class="chip">Pensamiento crítico</div>
+      <div class="chip">Liderazgo</div>
+    </div>
   </section>
 </body>
 </html>
