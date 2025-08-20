@@ -76,6 +76,25 @@
     .chip a:hover {
       text-decoration: underline;
     }
+    /* Estilos de la tabla */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
   </style>
 </head>
 <body>
@@ -162,24 +181,51 @@
     </div>
   </section>
 
+  <section id="educacion">
+    <h2>Educación</h2>
+    <table>
+      <caption>Formación Académica</caption>
+      <thead>
+        <tr>
+          <th scope="col">Año</th>
+          <th scope="col">Institución</th>
+          <th scope="col">Título obtenido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2023 - 2026</td>
+          <td>Universidad Francisco Marroquín</td>
+          <td>Licenciatura en Computer Science</td>
+        </tr>
+        <tr>
+          <td>2011 - 2022</td>
+          <td>Colegio Decroly Americano</td>
+          <td>Bachillerato en Ciencias y Letras | High School</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
   <section style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
-  <a href="gpracv1.pdf" download>
-    <button style="
-      background-color: #3498db;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    " 
-    onmouseover="this.style.backgroundColor='#2980b9'" 
-    onmouseout="this.style.backgroundColor='#3498db'">
-      Descargar CV en PDF
-    </button>
-  </a>
-</section>
+    <a href="gpracv1.pdf" download>
+      <button style="
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      " 
+      onmouseover="this.style.backgroundColor='#2980b9'" 
+      onmouseout="this.style.backgroundColor='#3498db'">
+        Descargar CV en PDF
+      </button>
+    </a>
+  </section>
 
 </body>
 </html>
