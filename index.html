@@ -6,101 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gian Paolo Robelo Ávila - CV</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Flexbox en el header para alinear la foto y los textos*/
-    header {
-      display: flex;
-      flex-direction: column; /* flexbox en columna */
-      align-items: center;  /* centrar la foto y textos */
-      justify-content: center;
-      background: linear-gradient(135deg, #3498db, #2c3e50);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      margin-bottom: 15px;
-      border: 4px solid white;
-    }
-
-    header h1 {
-      margin: 10px 0 5px;
-      font-size: 2.5em;
-    }
-
-    header p {
-      font-size: 1.2em;
-    }
-
-    @media (min-width: 768px) {
-      header {
-        flex-direction: row; /* si la pantalla es más grande, usa rows para poner la foto a la izquierda y textos a la derecha */
-        text-align: left;
-        gap: 20px;
-      }
-
-      header img {
-        margin-bottom: 0;
-      }
-
-      header h1, header p {
-        margin-left: 20px;
-      }
-    }
-
-    /* Flexbox en las chips */
-    .chips {
-      display: flex;
-      flex-wrap: wrap; /* wrappear por si no caben */
-      gap: 12px;  /* espacio entre chips */
-      margin-top: 10px;
-    }
-
-    .chip {
-      background: #3498db;
-      color: white;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.9em;
-      transition: transform 0.2s, background 0.3s;
-    }
-
-    .chip:hover {
-      background: #2c3e50;
-      transform: scale(1.05);
-    }
-
-    .chip a {
-      color: white;
-      text-decoration: none;
-    }
-
-    /* Botón de descarga */
-    .btn-download {
-      background: #3498db;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .btn-download:hover {
-      background: #2c3e50;
-      transform: scale(1.05);
-    }
-
-    .download {
-      text-align: center;
-      margin: 20px 0;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -111,145 +16,91 @@
     </div>
   </header>
 
-  <!-- Enlaces -->
-  <section>
-    <h2>Enlaces</h2>
-    <div class="chips">
-      <div class="chip"><a href="https://github.com/gian236" target="_blank">GitHub</a></div>
-      <div class="chip"><a href="https://www.linkedin.com/in/gian-paolo-robelo-%C3%A1vila-b953802a9/" target="_blank">LinkedIn</a></div>
-      <div class="chip"><a href="mailto:gianparobelo@ufm.edu">Correo</a></div>
+  <!-- GRID PRINCIPAL: dos columnas para organizar el CV -->
+  <div class="cv-grid">
+    <!-- Columna izquierda -->
+    <div class="cv-column">
+      <section>
+        <!-- Sección Enlaces -->
+        <h2>Enlaces</h2>
+        <div class="tags">
+          <span><a href="https://github.com/gian236" target="_blank">GitHub</a></span>
+          <span><a href="https://www.linkedin.com/in/gian-paolo-robelo-%C3%A1vila-b953802a9/" target="_blank">LinkedIn</a></span>
+          <span><a href="mailto:gianparobelo@ufm.edu">Correo</a></span>
+        </div>
+      </section>
+
+      <section>
+        <!-- Sección Lenguajes de Programación -->
+        <h2>Lenguajes de Programación</h2>
+        <div class="tags">
+          <span>C</span><span>C#</span><span>C++</span>
+          <span>Java</span><span>JavaScript</span><span>TypeScript</span>
+          <span>CSS</span><span>HTML</span><span>Python</span>
+          <span>R</span><span>Matlab</span><span>Octave</span>
+          <span>Bash</span><span>Powershell</span>
+        </div>
+      </section>
+
+      <section id="educacion">
+        <!-- Sección Educación -->
+        <h2>Educación</h2>
+        <table>
+          <thead>
+            <tr><th>Año</th><th>Institución</th><th>Título obtenido</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2023 - 2026</td><td>Universidad Francisco Marroquín</td><td>Licenciatura en Computer Science</td></tr>
+            <tr><td>2011 - 2022</td><td>Colegio Decroly Americano</td><td>Bachillerato en Ciencias y Letras | High School</td></tr>
+          </tbody>
+        </table>
+      </section>
     </div>
-  </section>
 
-  <!-- Tecnologías -->
-  <section>
-    <h2>Tecnologías Usadas</h2>
+    <!-- Columna derecha -->
+    <div class="cv-column">
+      <section>
+        <!-- Sección Tecnologías Usadas -->
+        <h2>Tecnologías Usadas</h2>
+        <h3>Bases de Datos</h3>
+        <div class="tags"><span>Redis</span><span>ElasticSearch</span><span>PostgreSQL</span><span>SQLite</span><span>MySQL</span><span>MongoDB</span></div>
+        <h3>Contenedores y Orquestación</h3>
+        <div class="tags"><span>Docker</span></div>
+        <h3>Diseño</h3>
+        <div class="tags"><span>Figma</span></div>
+        <h3>Nube</h3>
+        <div class="tags"><span>AWS</span><span>S3</span><span>Azure</span></div>
+      </section>
 
-    <h3>Bases de Datos</h3>
-    <div class="chips">
-      <div class="chip">Redis</div>
-      <div class="chip">ElasticSearch</div>
-      <div class="chip">PostgreSQL</div>
-      <div class="chip">SQLite</div>
-      <div class="chip">MySQL</div>
-      <div class="chip">MongoDB</div>
+      <section>
+        <!-- Sección Soft Skills -->
+        <h2>Soft Skills</h2>
+        <div class="tags">
+          <span>Trabajo en equipo</span><span>Resolución de problemas</span><span>Adaptabilidad</span>
+          <span>Comunicación</span><span>Organización</span><span>Gestión del tiempo</span>
+          <span>Curiosidad</span><span>Aprendizaje continuo</span>
+          <span>Pensamiento crítico</span><span>Liderazgo</span>
+        </div>
+      </section>
+
+      <section id="experiencia">
+        <!-- Sección Experiencia Laboral -->
+        <h2>Experiencia Laboral</h2>
+        <table>
+          <thead>
+            <tr><th>Periodo</th><th>Empresa</th><th>Puesto</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jun 2024 - Actualidad</td><td>Startup Jungle</td><td>Desarrollador Backend</td></tr>
+            <tr><td>Ene 2023 - May 2024</td><td>Tech Solutions GT</td><td>Practicante en Desarrollo Backend</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="download">
+        <a href="gpracv2.pdf" download><button class="btn-download">Descargar CV en PDF</button></a>
+      </section>
     </div>
-
-    <h3>Contenedores y Orquestación</h3>
-    <div class="chips">
-      <div class="chip">Docker</div>
-    </div>
-
-    <h3>Diseño</h3>
-    <div class="chips">
-      <div class="chip">Figma</div>
-    </div>
-
-    <h3>Nube</h3>
-    <div class="chips">
-      <div class="chip">AWS</div>
-      <div class="chip">S3</div>
-      <div class="chip">Azure</div>
-    </div>
-  </section>
-
-  <!-- Lenguajes -->
-  <section>
-    <h2>Lenguajes de Programación</h2>
-    <div class="chips">
-      <div class="chip">C</div>
-      <div class="chip">C#</div>
-      <div class="chip">C++</div>
-      <div class="chip">Java</div>
-      <div class="chip">JavaScript</div>
-      <div class="chip">TypeScript</div>
-      <div class="chip">CSS</div>
-      <div class="chip">HTML</div>
-      <div class="chip">Python</div>
-      <div class="chip">R</div>
-      <div class="chip">Matlab</div>
-      <div class="chip">Octave</div>
-      <div class="chip">Bash</div>
-      <div class="chip">Powershell</div>
-    </div>
-  </section>
-
-  <!-- Soft Skills -->
-  <section>
-    <h2>Soft Skills</h2>
-    <div class="chips">
-      <div class="chip">Trabajo en equipo</div>
-      <div class="chip">Resolución de problemas</div>
-      <div class="chip">Adaptabilidad</div>
-      <div class="chip">Comunicación</div>
-      <div class="chip">Organización</div>
-      <div class="chip">Gestión del tiempo</div>
-      <div class="chip">Curiosidad</div>
-      <div class="chip">Aprendizaje continuo</div>
-      <div class="chip">Pensamiento crítico</div>
-      <div class="chip">Liderazgo</div>
-    </div>
-  </section>
-
-  <!-- Educación -->
-  <section id="educacion">
-    <h2>Educación</h2>
-    <table>
-      <caption>Formación Académica</caption>
-      <thead>
-        <tr>
-          <th scope="col">Año</th>
-          <th scope="col">Institución</th>
-          <th scope="col">Título obtenido</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2023 - 2026</td>
-          <td>Universidad Francisco Marroquín</td>
-          <td>Licenciatura en Computer Science</td>
-        </tr>
-        <tr>
-          <td>2011 - 2022</td>
-          <td>Colegio Decroly Americano</td>
-          <td>Bachillerato en Ciencias y Letras | High School</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Experiencia -->
-  <section id="experiencia">
-    <h2>Experiencia Laboral</h2>
-    <table>
-      <caption>Historial de Experiencia Laboral</caption>
-      <thead>
-        <tr>
-          <th scope="col">Periodo</th>
-          <th scope="col">Empresa</th>
-          <th scope="col">Puesto</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Jun 2024 - Actualidad</td>
-          <td>Startup Jungle</td>
-          <td>Desarrollador Backend</td>
-        </tr>
-        <tr>
-          <td>Ene 2023 - May 2024</td>
-          <td>Tech Solutions GT</td>
-          <td>Practicante en Desarrollo Backend</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Botón Descargar -->
-  <section class="download">
-    <a href="gpracv2.pdf" download>
-      <button class="btn-download">Descargar CV en PDF</button>
-    </a>
-  </section>
+  </div>
 </body>
 </html>

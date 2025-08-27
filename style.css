@@ -1,3 +1,6 @@
+/* ---------------------
+   BODY
+--------------------- */
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -6,7 +9,15 @@ body {
   color: #1e2a38;
 }
 
+/* ---------------------
+   HEADER
+   Flexbox para foto y textos
+--------------------- */
 header {
+  display: flex;
+  flex-direction: column; /* pantalla pequeña: columna */
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #3498db, #2c3e50);
   color: white;
   padding: 40px 20px;
@@ -14,96 +25,158 @@ header {
 }
 
 header img {
-  width: 150px;
   border-radius: 50%;
-  border: 4px solid white;
+  width: 150px;
+  height: 150px;
   margin-bottom: 15px;
+  border: 4px solid white;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-h1 {
-  margin: 10px 0;
-  font-size: 32px;
+header h1 {
+  margin: 10px 0 5px;
+  font-size: 2.5em;
 }
 
-h2 {
-  margin-top: 30px;
+header p {
+  font-size: 1.2em;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row; /* pantalla grande: fila */
+    text-align: left;
+    gap: 20px;
+  }
+  header img { margin-bottom: 0; }
+  header h1, header p { margin-left: 20px; }
+}
+
+/* ---------------------
+   GRID PRINCIPAL DEL CV
+   2 columnas pantalla grande, 1 columna pantalla pequeña
+--------------------- */
+.cv-grid {
+  display: grid; /* usamos grid para layout general */
+  grid-template-columns: 1fr; /* 1 columna */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 900px) {
+  .cv-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+  }
+}
+
+/* ---------------------
+   COLUMNAS INTERNAS
+   Flexbox vertical para apilar secciones
+--------------------- */
+.cv-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ---------------------
+   SECCIONES
+   Tarjetas con sombra y borde redondeado
+--------------------- */
+.cv-column section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+h2 { 
+  margin-top: 0; 
   color: #2c3e50;
   border-left: 6px solid #3498db;
   padding-left: 12px;
   font-size: 22px;
 }
 
-section {
-  margin: 40px auto;
-  max-width: 1000px;
-  padding: 0 20px;
+h3 { 
+  margin-bottom: 8px; 
+  color: #3498db; 
 }
 
+/* ---------------------
+   CHIPS / TAGS
+   Flexbox para distribuir los elementos
+--------------------- */
+.tags, .chips {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+  margin-top: 10px;
+}
+
+.tags span, .chip {
+  background: #3498db;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: transform 0.2s, background 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.tags span:hover, .chip:hover {
+  background: #2c3e50;
+  transform: scale(1.05);
+}
+
+/* ---------------------
+   TABLAS
+--------------------- */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
 }
 
 th {
   background: #3498db;
   color: white;
-  text-align: left;
 }
 
-th, td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #eee;
+tr:hover td {
+  background: #f1faff;
 }
 
-tr:hover {
-  background: #f1f9ff;
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.chip {
-  background: #3498db;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.chip:hover {
-  background: #217dbb;
-  transform: scale(1.05);
-}
-
+/* ---------------------
+   BOTÓN DE DESCARGA
+--------------------- */
 .download {
   text-align: center;
-  margin: 50px 0;
+  margin: 20px 0;
 }
 
 .btn-download {
-  padding: 14px 30px;
-  background: #2c3e50;
+  background: #3498db;
   color: white;
-  font-size: 18px;
   border: none;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  font-size: 1em;
+  transition: background 0.3s, transform 0.2s;
 }
+
 .btn-download:hover {
-  background: #1a252f;
-  transform: translateY(-2px);
+  background: #2c3e50;
+  transform: scale(1.05);
 }
