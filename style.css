@@ -1,74 +1,95 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+  background: #f4f7fa;
+  color: #2c3e50;
 }
 
 header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 header img {
-  width: 150px;
+  width: 140px;
   border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 10px;
 }
 
 h1 {
-  margin: 10px 0 5px;
+  margin: 10px 0;
+  font-size: 28px;
 }
 
 h2 {
   margin-top: 25px;
-  color: #444;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
+  color: #2c3e50;
+  border-left: 5px solid #3498db;
+  padding-left: 10px;
 }
 
 section {
-  margin-bottom: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  padding: 0 20px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 12px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-table, th, td {
-  border: 1px solid #ccc;
+th {
+  background: #3498db;
+  color: white;
 }
 
 th, td {
-  padding: 8px;
-  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 10px;
 }
 
 .chip {
-  background: #e0e0e0;
-  padding: 6px 12px;
-  border-radius: 15px;
+  background: #3498db;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 20px;
   font-size: 14px;
+  transition: background 0.3s;
+}
+
+.chip:hover {
+  background: #2980b9;
+}
+
+.download {
+  text-align: center;
+  margin: 40px 0;
 }
 
 .btn-download {
-  padding: 10px 20px;
-  background: #444;
+  padding: 12px 24px;
+  background: #2c3e50;
   color: white;
+  font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
 }
 .btn-download:hover {
-  background: #666;
+  background: #34495e;
 }
