@@ -6,12 +6,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gian Paolo Robelo Ávila - CV</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Flexbox en el header para alinear la foto y los textos*/
+    header {
+      display: flex;
+      flex-direction: column; /* flexbox en columna */
+      align-items: center;  /* centrar la foto y textos */
+      justify-content: center;
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 15px;
+      border: 4px solid white;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row; /* si la pantalla es más grande, usa rows para poner la foto a la izquierda y textos a la derecha */
+        text-align: left;
+        gap: 20px;
+      }
+
+      header img {
+        margin-bottom: 0;
+      }
+
+      header h1, header p {
+        margin-left: 20px;
+      }
+    }
+
+    /* Flexbox en las chips */
+    .chips {
+      display: flex;
+      flex-wrap: wrap; /* wrappear por si no caben */
+      gap: 12px;  /* espacio entre chips */
+      margin-top: 10px;
+    }
+
+    .chip {
+      background: #3498db;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .chip:hover {
+      background: #2c3e50;
+      transform: scale(1.05);
+    }
+
+    .chip a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Botón de descarga */
+    .btn-download {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-download:hover {
+      background: #2c3e50;
+      transform: scale(1.05);
+    }
+
+    .download {
+      text-align: center;
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
   <header>
     <img src="gpra.jpg" alt="Foto de Gian Paolo Robelo Ávila" />
-    <h1>Gian Paolo Robelo Ávila</h1>
-    <p>Estudiante de Computer Science en la Universidad Francisco Marroquín | Guatemala | 21 años</p>
+    <div>
+      <h1>Gian Paolo Robelo Ávila</h1>
+      <p>Estudiante de Computer Science en la Universidad Francisco Marroquín | Guatemala | 21 años</p>
+    </div>
   </header>
 
   <!-- Enlaces -->
