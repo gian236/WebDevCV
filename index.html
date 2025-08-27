@@ -5,97 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gian Paolo Robelo Ávila - CV</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: white;
-      max-width: 600px;
-      margin: 40px auto 20px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-    header img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #333;
-    }
-    header p {
-      margin-top: 5px;
-      font-size: 1.2rem;
-      color: #666;
-    }
-    section {
-      max-width: 600px;
-      background-color: white;
-      margin: 0 auto 40px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    section h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
-    }
-    section h3 {
-      margin-top: 20px;
-      color: #34495e;
-    }
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .chip {
-      background-color: #e0e0e0;
-      padding: 8px 12px;
-      border-radius: 16px;
-      font-size: 0.95rem;
-      color: #333;
-      text-decoration: none;
-    }
-    .chip a {
-      color: #333;
-      text-decoration: none;
-    }
-    .chip a:hover {
-      text-decoration: underline;
-    }
-    /* Estilos de la tabla */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-    caption {
-      caption-side: top;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #f0f0f0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -104,7 +14,7 @@
     <p>Estudiante de Computer Science en la Universidad Francisco Marroquín | Guatemala | 21 años</p>
   </header>
 
-  <!-- Sección de Enlaces al principio -->
+  <!-- Enlaces -->
   <section>
     <h2>Enlaces</h2>
     <div class="chips">
@@ -114,6 +24,7 @@
     </div>
   </section>
 
+  <!-- Tecnologías -->
   <section>
     <h2>Tecnologías Usadas</h2>
 
@@ -145,6 +56,7 @@
     </div>
   </section>
 
+  <!-- Lenguajes -->
   <section>
     <h2>Lenguajes de Programación</h2>
     <div class="chips">
@@ -165,6 +77,7 @@
     </div>
   </section>
 
+  <!-- Soft Skills -->
   <section>
     <h2>Soft Skills</h2>
     <div class="chips">
@@ -181,10 +94,11 @@
     </div>
   </section>
 
+  <!-- Educación -->
   <section id="educacion">
     <h2>Educación</h2>
     <table>
-      <caption>Formación Académica: Años y títulos obtenidos</caption>
+      <caption>Formación Académica</caption>
       <thead>
         <tr>
           <th scope="col">Año</th>
@@ -207,10 +121,11 @@
     </table>
   </section>
 
+  <!-- Experiencia -->
   <section id="experiencia">
     <h2>Experiencia Laboral</h2>
     <table>
-      <caption>Historial de Experiencia Laboral con periodos, empresas y puestos</caption>
+      <caption>Historial de Experiencia Laboral</caption>
       <thead>
         <tr>
           <th scope="col">Periodo</th>
@@ -227,33 +142,17 @@
         <tr>
           <td>Ene 2023 - May 2024</td>
           <td>Tech Solutions GT</td>
-          <td>Practicante en Desarrollo de Software en el área de Backend</td>
+          <td>Practicante en Desarrollo Backend</td>
         </tr>
       </tbody>
     </table>
   </section>
 
-
-
-
-  <section style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+  <!-- Botón Descargar -->
+  <section class="download">
     <a href="gpracv2.pdf" download>
-      <button style="
-        background-color: #3498db;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      " 
-      onmouseover="this.style.backgroundColor='#2980b9'" 
-      onmouseout="this.style.backgroundColor='#3498db'">
-        Descargar CV en PDF
-      </button>
+      <button class="btn-download">Descargar CV en PDF</button>
     </a>
   </section>
-
 </body>
 </html>
