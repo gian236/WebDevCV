@@ -250,3 +250,73 @@ tr:hover td {
   }
 }
 
+/* ---------------------
+   RESPONSIVE IPAD PRO
+   ancho 1024px
+--------------------- */
+@media (max-width: 1024px) {
+  /* GRID principal: 2 columnas equilibradas */
+  .cv-grid {
+    grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  /* HEADER: flex horizontal o vertical dependiendo de espacio */
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 15px;
+  }
+
+  header img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 12px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    margin: 10px 0 5px;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+
+  /* Secciones: padding ajustado */
+  .cv-column section {
+    padding: 18px;
+  }
+
+  /* Títulos de sección */
+  h2 {
+    font-size: 20px;
+    padding-left: 10px;
+    border-left-width: 5px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+  /* Chips / Tags un poco más grandes que en móvil */
+  .tags span, .chip {
+    padding: 5px 12px;
+    font-size: 0.85em;
+  }
+
+  /* Botón descargar */
+  .btn-download {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+
+  /* Tablas: padding y fuente */
+  th, td {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+}
+
+
