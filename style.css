@@ -318,5 +318,126 @@ tr:hover td {
     font-size: 0.9em;
   }
 }
+/* ---------------------
+   Resolución Monitor 1920 x 1080: resoluciones normales 1200px a 1920px
+--------------------- */
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .cv-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columnas equilibradas */
+    gap: 40px;
+    padding: 0 50px;
+  }
+
+  header {
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 50px 50px;
+  }
+
+  header img {
+    width: 160px;
+    height: 160px;
+  }
+
+  header h1 {
+    font-size: 36px;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  .cv-column section {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 24px;
+    padding-left: 12px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .tags span, .chip {
+    padding: 6px 16px;
+    font-size: 0.9em;
+  }
+
+  .btn-download {
+    padding: 14px 30px;
+    font-size: 1.1em;
+  }
+
+  th, td {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
+
+/* ---------------------
+   Resolución pantalla laptop 2560 x 1600: resolución >1920px (2560px)
+--------------------- */
+@media (min-width: 1921px) {
+  .cv-grid {
+    grid-template-columns: 1.2fr 1.2fr; /* columnas más amplias para aprovechar espacio */
+    gap: 50px;
+    max-width: 1800px;
+    margin: 50px auto;
+    padding: 0 60px;
+  }
+
+  header {
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 60px 60px;
+  }
+
+  header img {
+    width: 180px;
+    height: 180px;
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  header p {
+    font-size: 1.3em;
+  }
+
+  .cv-column section {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+    padding-left: 14px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .tags span, .chip {
+    padding: 8px 18px;
+    font-size: 1em;
+  }
+
+  .btn-download {
+    padding: 16px 36px;
+    font-size: 1.2em;
+  }
+
+  th, td {
+    padding: 14px;
+    font-size: 1.05em;
+  }
+}
 
 
