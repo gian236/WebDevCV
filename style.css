@@ -180,3 +180,73 @@ tr:hover td {
   background: #2c3e50;
   transform: scale(1.05);
 }
+
+/* ---------------------
+   RESPONSIVE IPHONE 14 PRO MAX
+   ancho 430px
+--------------------- */
+@media (max-width: 430px) {
+  /* GRID principal: 1 columna */
+  .cv-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  /* HEADER: flex vertical y texto más pequeño */
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 10px;
+  }
+
+  header img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    margin: 8px 0 4px;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  /* Secciones: padding reducido para caber en pantalla */
+  .cv-column section {
+    padding: 15px;
+  }
+
+  /* Títulos de sección más pequeños */
+  h2 {
+    font-size: 18px;
+    padding-left: 10px;
+    border-left-width: 4px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  /* Chips / Tags más compactas */
+  .tags span, .chip {
+    padding: 4px 10px;
+    font-size: 0.8em;
+  }
+
+  /* Botón descargar más pequeño */
+  .btn-download {
+    padding: 10px 18px;
+    font-size: 0.9em;
+  }
+
+  /* Tablas: ajustar fuente y padding */
+  th, td {
+    padding: 8px;
+    font-size: 0.8em;
+  }
+}
+
