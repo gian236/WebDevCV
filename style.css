@@ -24,14 +24,14 @@ header {
   text-align: center;
 }
 
-header img {
+/* header img {
   border-radius: 50%;
   width: 150px;
   height: 150px;
   margin-bottom: 15px;
   border: 4px solid white;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
+} */
 
 header h1 {
   margin: 10px 0 5px;
