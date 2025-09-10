@@ -473,3 +473,17 @@ body, section {
   border-left-color: #f1c40f;
   color: #f1c40f;
 }
+
+/* Highlight dentro de chips */
+mark {
+  background: #fff176; /* amarillo suave */
+  color: inherit;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+/* Mensaje "no encontrado" */
+#noSkillsMessage {
+  font-size: 0.95em;
+  color: #6c757d; /* text-muted */
+}
