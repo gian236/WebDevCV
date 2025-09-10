@@ -440,4 +440,36 @@ tr:hover td {
   }
 }
 
+.dark-mode {
+  background: #1e2a38;
+  color: white;
+}
 
+.dark-mode section {
+  background: #2c3e50;
+  color: white;
+}
+
+.dark-mode h2 {
+  border-left-color: #f1c40f;
+  color: #f1c40f;
+}
+
+body, section {
+  transition: background 0.4s, color 0.4s;
+}
+
+.dark-mode {
+  background: #1e2a38;
+  color: white;
+}
+
+.dark-mode section {
+  background: #2c3e50;
+  color: white;
+}
+
+.dark-mode h2 {
+  border-left-color: #f1c40f;
+  color: #f1c40f;
+}

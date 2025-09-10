@@ -24,3 +24,19 @@ experienciaContent.addEventListener("shown.bs.collapse", () => {
 experienciaContent.addEventListener("hidden.bs.collapse", () => {
   toggleBtn.textContent = "Mostrar Experiencia";
 });
+
+const toggleThemeBtn = document.getElementById("toggleTheme");
+
+toggleThemeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    toggleThemeBtn.innerHTML = '<i class="bi bi-sun-fill"></i> Modo claro';
+    toggleThemeBtn.classList.remove("btn-dark");
+    toggleThemeBtn.classList.add("btn-light");
+  } else {
+    toggleThemeBtn.innerHTML = '<i class="bi bi-moon-fill"></i> Modo oscuro';
+    toggleThemeBtn.classList.remove("btn-light");
+    toggleThemeBtn.classList.add("btn-dark");
+  }
+});
