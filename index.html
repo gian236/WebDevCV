@@ -121,39 +121,55 @@
 
       <section id="experiencia">
         <h2>Experiencia Laboral</h2>
+        
+        <!-- Botón para mostrar/ocultar -->
+        <button 
+          id="toggleExperiencia" 
+          class="btn btn-outline-dark mb-3" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#experienciaContent"
+          aria-expanded="true"
+          aria-controls="experienciaContent">
+          Ocultar Experiencia
+        </button>
 
-        <div class="accordion" id="experienciaAccordion">
+        <!-- Contenedor colapsable -->
+        <div id="experienciaContent" class="collapse show">
+          <div class="accordion" id="experienciaAccordion">
 
-          <!-- Experiencia 1 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                Startup Jungle - Desarrollador Backend (Jun 2024 - Actualidad)
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
-              <div class="accordion-body">
-                Desarrollo backend con Python y FastAPI, gestión de bases de datos PostgreSQL, despliegues en AWS.
+            <!-- Experiencia 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                  Startup Jungle - Desarrollador Backend (Jun 2024 - Actualidad)
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                <div class="accordion-body">
+                  Desarrollo backend con Python y FastAPI, gestión de bases de datos PostgreSQL, despliegues en AWS.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Experiencia 2 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                Tech Solutions GT - Practicante Backend (Ene 2023 - May 2024)
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
-              <div class="accordion-body">
-                Soporte en desarrollo backend, manejo de APIs y bases de datos.
+            <!-- Experiencia 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                  Tech Solutions GT - Practicante Backend (Ene 2023 - May 2024)
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                <div class="accordion-body">
+                  Soporte en desarrollo backend, manejo de APIs y bases de datos.
+                </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
+
 
 
       <section class="text-center my-4">

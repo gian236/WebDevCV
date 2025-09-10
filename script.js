@@ -13,3 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   saludo.textContent = mensaje;
 });
+
+const toggleBtn = document.getElementById("toggleExperiencia");
+const experienciaContent = document.getElementById("experienciaContent");
+
+experienciaContent.addEventListener("shown.bs.collapse", () => {
+  toggleBtn.textContent = "Ocultar Experiencia";
+});
+
+experienciaContent.addEventListener("hidden.bs.collapse", () => {
+  toggleBtn.textContent = "Mostrar Experiencia";
+});
