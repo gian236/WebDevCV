@@ -40,3 +40,15 @@ toggleThemeBtn.addEventListener("click", () => {
     toggleThemeBtn.classList.add("btn-dark");
   }
 });
+
+const toggleContactoBtn = document.getElementById("toggleContacto");
+const contactoContent = document.getElementById("contactoContent");
+
+contactoContent.addEventListener("shown.bs.collapse", () => {
+  toggleContactoBtn.innerHTML = '<i class="bi bi-eye-slash-fill"></i> Ocultar contacto';
+});
+
+contactoContent.addEventListener("hidden.bs.collapse", () => {
+  toggleContactoBtn.innerHTML = '<i class="bi bi-eye-fill"></i> Mostrar contacto';
+});
+

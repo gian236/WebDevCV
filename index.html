@@ -35,24 +35,41 @@
   <div class="cv-grid">
     <!-- Columna izquierda -->
     <div class="cv-column">
-      <section>
+      <section id="contacto">
         <h2>Enlaces</h2>
-        <div class="d-flex flex-wrap gap-2 mt-2">
 
-          <a href="https://github.com/gian236" target="_blank" class="btn btn-outline-dark btn-lg">
-            <i class="bi bi-github"></i> GitHub
-          </a>
+        <!-- Botón dinámico -->
+        <button 
+          id="toggleContacto" 
+          class="btn btn-outline-primary rounded-pill px-4 py-2 mb-3" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#contactoContent"
+          aria-expanded="true"
+          aria-controls="contactoContent">
+          <i class="bi bi-eye-slash-fill"></i> Ocultar contacto
+        </button>
 
-          <a href="https://www.linkedin.com/in/gian-paolo-robelo-%C3%A1vila-b953802a9/" target="_blank" class="btn btn-outline-primary btn-lg">
-            <i class="bi bi-linkedin"></i> LinkedIn
-          </a>
+        <!-- Contenido colapsable -->
+        <div id="contactoContent" class="collapse show">
+          <div class="d-flex flex-wrap gap-2 mt-2">
 
-          <a href="mailto:gianparobelo@ufm.edu" class="btn btn-outline-success btn-lg">
-            <i class="bi bi-envelope-fill"></i> Correo
-          </a>
+            <a href="https://github.com/gian236" target="_blank" class="btn btn-outline-dark btn-lg">
+              <i class="bi bi-github"></i> GitHub
+            </a>
 
+            <a href="https://www.linkedin.com/in/gian-paolo-robelo-%C3%A1vila-b953802a9/" target="_blank" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+
+            <a href="mailto:gianparobelo@ufm.edu" class="btn btn-outline-success btn-lg">
+              <i class="bi bi-envelope-fill"></i> Correo
+            </a>
+
+          </div>
         </div>
       </section>
+
 
 
   <section>
