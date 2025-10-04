@@ -1,1 +1,19 @@
-<p>educacion works!</p>
+<section id="educacion">
+  <h2>Educación</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Institución</th>
+        <th>Título obtenido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of educacion">
+        <td>{{ item.anio }}</td>
+        <td>{{ item.institucion }}</td>
+        <td>{{ item.titulo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
