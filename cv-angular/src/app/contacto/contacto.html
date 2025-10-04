@@ -1,1 +1,26 @@
-<p>contacto works!</p>
+<section>
+  <h2>Enlaces</h2>
+
+  <button
+    class="btn btn-outline-primary rounded-pill px-4 py-2 mb-3"
+    (click)="toggleContacto()">
+    <i class="bi" [ngClass]="contactoVisible ? 'bi-eye-slash-fill' : 'bi-eye-fill'"></i>
+    {{ contactoVisible ? 'Ocultar contacto' : 'Mostrar contacto' }}
+  </button>
+
+  <div *ngIf="contactoVisible" class="d-flex flex-wrap gap-2 mt-2">
+    <a href="https://github.com/gian236" target="_blank" class="btn btn-outline-dark btn-lg">
+      <i class="bi bi-github"></i> GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/in/gian-paolo-robelo-%C3%A1vila-b953802a9/"
+       target="_blank"
+       class="btn btn-outline-primary btn-lg">
+      <i class="bi bi-linkedin"></i> LinkedIn
+    </a>
+
+    <a href="mailto:gianparobelo@ufm.edu" class="btn btn-outline-success btn-lg">
+      <i class="bi bi-envelope-fill"></i> Correo
+    </a>
+  </div>
+</section>

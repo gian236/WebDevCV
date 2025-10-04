@@ -1,26 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.html',
-  styleUrl: './header.css'
+  styleUrl: './header.css',
 })
 export class Header implements OnInit {
   saludo = '';
   darkMode = false;
 
+  constructor(private themeService: ThemeService) {}
+
   ngOnInit() {
     const hora = new Date().getHours();
-    if (hora < 12) this.saludo = '¡Buenos días!';
-    else if (hora < 18) this.saludo = '¡Buenas tardes!';
-    else this.saludo = '¡Buenas noches!';
+    this.saludo =
+      hora < 12 ? '¡Buenos días!' : hora < 18 ? '¡Buenas tardes!' : '¡Buenas noches!';
+
+    this.themeService.darkMode$.subscribe((active) => (this.darkMode = active));
   }
 
   toggleTheme() {
-    this.darkMode = !this.darkMode;
-    document.body.classList.toggle('dark-mode', this.darkMode);
+    this.themeService.toggleTheme();
   }
 }

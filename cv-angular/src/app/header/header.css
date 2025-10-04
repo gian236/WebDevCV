@@ -1,3 +1,4 @@
+/* ---------- MODO CLARO (por defecto) ---------- */
 header {
   display: flex;
   flex-direction: column;
@@ -32,4 +33,28 @@ header p {
   header p {
     margin-left: 20px;
   }
+}
+
+/* ---------- MODO OSCURO ---------- */
+/* Este selector es la clave */
+:host-context(.dark-mode) header {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1c40f;
+}
+
+/* Opcional: cambia el borde blanco de la foto */
+:host-context(.dark-mode) header img {
+  border-color: #f1c40f !important;
+}
+
+/* Opcional: cambia el botón */
+:host-context(.dark-mode) header .btn-dark {
+  background-color: #f1c40f;
+  color: #1e293b;
+  border: none;
+}
+
+:host-context(.dark-mode) header .btn-dark:hover {
+  background-color: #ffe766;
+  color: #111;
 }

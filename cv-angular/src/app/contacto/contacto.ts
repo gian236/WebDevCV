@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contacto',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './contacto.html',
   styleUrl: './contacto.css'
 })
 export class Contacto {
+  contactoVisible = true;
 
+  toggleContacto() {
+    this.contactoVisible = !this.contactoVisible;
+  }
 }
