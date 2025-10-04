@@ -1,0 +1,19 @@
+<section id="soft-skills">
+  <h2>Soft Skills</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    class="form-control mb-3"
+    placeholder="Buscar habilidad..." />
+
+  <div class="tags">
+    <span *ngFor="let skill of filteredSkills">
+      <span [innerHTML]="highlight(skill, searchTerm)"></span>
+    </span>
+  </div>
+
+  <div *ngIf="filteredSkills.length === 0" class="mt-2 text-muted" id="noSkillsMessage">
+    No se encontraron habilidades.
+  </div>
+</section>

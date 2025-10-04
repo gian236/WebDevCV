@@ -1,0 +1,23 @@
+<section>
+  <h2>Experiencia Laboral</h2>
+
+  <button
+    class="btn btn-outline-dark rounded-pill px-4 py-2 mb-3"
+    (click)="toggleExperiencia()">
+    <i class="bi" [ngClass]="experienciaVisible ? 'bi-eye-slash-fill' : 'bi-eye-fill'"></i>
+    {{ experienciaVisible ? 'Ocultar Experiencia' : 'Mostrar Experiencia' }}
+  </button>
+
+  <div *ngIf="experienciaVisible">
+    <div *ngFor="let item of items" class="accordion-item">
+      <button class="accordion-button rounded-pill" (click)="toggleItem(item)">
+        {{ item.titulo }}
+      </button>
+      <div class="accordion-collapse" [class.show]="item.abierto">
+        <div class="accordion-body">
+          {{ item.descripcion }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

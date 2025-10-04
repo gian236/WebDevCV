@@ -1,0 +1,88 @@
+#soft-skills {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.4s, color 0.4s, border-color 0.4s;
+}
+
+#soft-skills h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+  font-size: 22px;
+  margin-bottom: 15px;
+  transition: color 0.4s, border-color 0.4s;
+}
+
+#soft-skills input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#soft-skills input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tags span {
+  background: #3498db;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: transform 0.2s, background 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.tags span:hover {
+  background: #2c3e50;
+  transform: scale(1.05);
+}
+
+/* DARK MODE */
+:host-context(.dark-mode) #soft-skills {
+  background: #2c3e50;
+  color: white;
+}
+
+:host-context(.dark-mode) #soft-skills h2 {
+  color: #f1c40f;
+  border-left-color: #f1c40f;
+}
+
+:host-context(.dark-mode) #soft-skills input {
+  background: #34495e;
+  color: white;
+  border-color: #f1c40f;
+}
+
+:host-context(.dark-mode) #soft-skills input:focus {
+  border-color: #f1c40f;
+}
+
+:host-context(.dark-mode) .tags span {
+  background: #34495e;
+  color: #f1f1f1;
+}
+
+:host-context(.dark-mode) .tags span:hover {
+  background: #f1c40f;
+  color: #2c3e50;
+}
+
+#noSkillsMessage {
+  font-size: 0.95em;
+  color: #6c757d; /* text-muted */
+}
