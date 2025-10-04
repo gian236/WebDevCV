@@ -1,4 +1,4 @@
-<section id="experiencia">
+<section>
   <h2>Experiencia Laboral</h2>
 
   <button
@@ -9,20 +9,13 @@
   </button>
 
   <div *ngIf="experienciaVisible">
-    <div class="accordion" id="experienciaAccordion">
-      <div class="accordion-item" *ngFor="let item of experiencia; let i = index">
-        <h2 class="accordion-header" [id]="'heading' + i">
-          <button class="accordion-button"
-                  [class.collapsed]="!item.open"
-                  type="button"
-                  (click)="toggleItem(item)">
-            {{ item.titulo }} ({{ item.periodo }})
-          </button>
-        </h2>
-        <div class="accordion-collapse" [@expandCollapse]="item.open ? 'open' : 'closed'">
-          <div class="accordion-body">
-            {{ item.descripcion }}
-          </div>
+    <div *ngFor="let item of items" class="accordion-item">
+      <button class="accordion-button rounded-pill" (click)="toggleItem(item)">
+        {{ item.titulo }}
+      </button>
+      <div class="accordion-collapse" [class.show]="item.abierto">
+        <div class="accordion-body">
+          {{ item.descripcion }}
         </div>
       </div>
     </div>

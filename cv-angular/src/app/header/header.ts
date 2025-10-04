@@ -15,13 +15,22 @@ export class Header implements OnInit {
 
   constructor(private themeService: ThemeService) {}
 
-  ngOnInit() {
-    const hora = new Date().getHours();
-    this.saludo =
-      hora < 12 ? '¡Buenos días!' : hora < 18 ? '¡Buenas tardes!' : '¡Buenas noches!';
+ngOnInit() {
+  const hora = new Date().getHours();
 
-    this.themeService.darkMode$.subscribe((active) => (this.darkMode = active));
+  if (hora >= 6 && hora < 12) {
+    this.saludo = '¡Buenos días!';
+  } else if (hora >= 12 && hora < 18) {
+    this.saludo = '¡Buenas tardes!';
+  } else if (hora >= 18 && hora < 22) {
+    this.saludo = '¡Buenas noches!';
+  } else {
+    this.saludo = '¡Buenas madrugadas!';
   }
+
+  this.themeService.darkMode$.subscribe((active) => (this.darkMode = active));
+}
+
 
   toggleTheme() {
     this.themeService.toggleTheme();

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-download',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './download.html',
-  styleUrl: './download.css'
+  styleUrls: ['./download.css']
 })
-export class Download {
-
-}
+export class Download {}
