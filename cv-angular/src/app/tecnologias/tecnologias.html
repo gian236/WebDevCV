@@ -1,1 +1,23 @@
-<p>tecnologias works!</p>
+<section id="tecnologias">
+  <h2>Tecnologías Usadas</h2>
+
+  <h3>Bases de Datos</h3>
+  <div class="tags">
+    <span *ngFor="let db of basesDeDatos">{{ db }}</span>
+  </div>
+
+  <h3>Contenedores y Orquestación</h3>
+  <div class="tags">
+    <span *ngFor="let cont of contenedores">{{ cont }}</span>
+  </div>
+
+  <h3>Diseño</h3>
+  <div class="tags">
+    <span *ngFor="let d of diseno">{{ d }}</span>
+  </div>
+
+  <h3>Nube</h3>
+  <div class="tags">
+    <span *ngFor="let n of nube">{{ n }}</span>
+  </div>
+</section>

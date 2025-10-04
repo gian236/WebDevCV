@@ -1,0 +1,70 @@
+#tecnologias {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.4s, color 0.4s, border-color 0.4s;
+}
+
+#tecnologias h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+  font-size: 22px;
+  margin-bottom: 15px;
+  transition: color 0.4s, border-color 0.4s;
+}
+
+#tecnologias h3 {
+  margin-bottom: 8px;
+  color: #3498db;
+  transition: color 0.4s;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tags span {
+  background: #3498db;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: transform 0.2s, background 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.tags span:hover {
+  background: #2c3e50;
+  transform: scale(1.05);
+}
+
+/* DARK MODE */
+:host-context(.dark-mode) #tecnologias {
+  background: #2c3e50;
+  color: white;
+}
+
+:host-context(.dark-mode) #tecnologias h2 {
+  color: #f1c40f;
+  border-left-color: #f1c40f;
+}
+
+:host-context(.dark-mode) #tecnologias h3 {
+  color: #f1c40f;
+}
+
+:host-context(.dark-mode) .tags span {
+  background: #34495e;
+  color: #f1f1f1;
+}
+
+:host-context(.dark-mode) .tags span:hover {
+  background: #f1c40f;
+  color: #2c3e50;
+}
