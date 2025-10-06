@@ -1,45 +1,31 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataService } from '../data.service';
+import { CapitalizePipe } from '../pipes/capitalize.pipe'; // 🔹 importa el pipe
 
 @Component({
   selector: 'app-experiencia',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CapitalizePipe], // 🔹 agrega el pipe aquí
   templateUrl: './experiencia.html',
   styleUrls: ['./experiencia.css']
 })
 export class Experiencia {
   experienciaVisible = true;
 
-  // Input para seleccionar vista: 'jobs' o 'studies'
   @Input() view: 'jobs' | 'studies' = 'jobs';
 
-  // Array de estudios fijos
-  studies = [
+  items = [
     {
-      titulo: 'Computer Science - Universidad Francisco Marroquín',
-      descripcion: 'Licenciatura en Computer Science',
+      titulo: 'Startup Jungle - Desarrollador Backend (Jun 2024 - Actualidad)',
+      descripcion: 'desarrollo backend con python y fastapi, gestión de bases de datos postgresql, despliegues en aws.',
       abierto: false
     },
     {
-      titulo: 'Curso de Angular',
-      descripcion: 'Aprendizaje práctico de Angular 20',
+      titulo: 'Tech Solutions GT - Practicante Backend (Ene 2023 - May 2024)',
+      descripcion: 'soporte en desarrollo backend, manejo de apis y bases de datos.',
       abierto: false
     }
   ];
-
-  // Jobs que vendrán del DataService
-  jobs: { titulo: string; descripcion: string; abierto: boolean }[] = [];
-
-  constructor(private dataService: DataService) {
-    // Inicializamos jobs desde el servicio
-    this.jobs = dataService.jobs.map(job => ({
-      titulo: job,
-      descripcion: 'Descripción pendiente...',
-      abierto: false
-    }));
-  }
 
   toggleItem(item: any) {
     item.abierto = !item.abierto;
@@ -49,12 +35,22 @@ export class Experiencia {
     this.experienciaVisible = !this.experienciaVisible;
   }
 
-  // Filtrar items según la vista
   get filteredItems() {
     if (this.view === 'jobs') {
-      return this.jobs;
+      return this.items.filter(item => item.titulo.includes('Backend') || item.titulo.includes('Dev'));
     } else {
-      return this.studies;
+      return [
+        {
+          titulo: 'Computer Science - Universidad Francisco Marroquín',
+          descripcion: 'licenciatura en computer science',
+          abierto: false
+        },
+        {
+          titulo: 'Curso de Angular',
+          descripcion: 'aprendizaje práctico de angular 20',
+          abierto: false
+        }
+      ];
     }
   }
 }
