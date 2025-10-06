@@ -22,24 +22,15 @@ import { About } from './about/about';
   template: `
     <app-header></app-header>
 
-    <!-- NAV DE SECCIONES -->
     <nav class="cv-navbar">
-      <button (click)="showSection('cv')" [class.active]="activeSection === 'cv'">
-        <i class="bi bi-person-vcard"></i> CV
-      </button>
-      <button (click)="showSection('about')" [class.active]="activeSection === 'about'">
-        <i class="bi bi-info-circle"></i> About
-      </button>
-      <button (click)="showSection('skills')" [class.active]="activeSection === 'skills'">
-        <i class="bi bi-lightning-charge"></i> Skills
-      </button>
-      <button (click)="showSection('experience')" [class.active]="activeSection === 'experience'">
-        <i class="bi bi-briefcase"></i> Experience
-      </button>
+      <button (click)="showSection('cv')" [class.active]="activeSection === 'cv'">CV</button>
+      <button (click)="showSection('about')" [class.active]="activeSection === 'about'">About</button>
+      <button (click)="showSection('skills')" [class.active]="activeSection === 'skills'">Skills</button>
+      <button (click)="showSection('experience')" [class.active]="activeSection === 'experience'">Experience</button>
     </nav>
 
     <main>
-      <!-- SECCIÓN CV -->
+      <!-- CV -->
       <div *ngIf="activeSection === 'cv'" class="cv-grid">
         <div class="cv-column">
           <app-contacto></app-contacto>
@@ -54,20 +45,31 @@ import { About } from './about/about';
         </div>
       </div>
 
-      <!-- SECCIÓN ABOUT -->
+      <!-- About -->
       <div *ngIf="activeSection === 'about'">
         <app-about></app-about>
       </div>
 
-      <!-- SECCIÓN SKILLS -->
+      <!-- Skills -->
       <div *ngIf="activeSection === 'skills'">
         <app-tecnologias></app-tecnologias>
         <app-soft-skills></app-soft-skills>
       </div>
 
-      <!-- SECCIÓN EXPERIENCE -->
-      <div *ngIf="activeSection === 'experience'">
-        <app-experiencia></app-experiencia>
+      <!-- Experience con sub-secciones -->
+      <div *ngIf="activeSection === 'experience'" class="experience-section">
+        <div class="experience-nav">
+          <button (click)="activeExperience = 'jobs'" [class.active]="activeExperience === 'jobs'">Jobs</button>
+          <button (click)="activeExperience = 'studies'" [class.active]="activeExperience === 'studies'">Studies</button>
+        </div>
+
+        <div *ngIf="activeExperience === 'jobs'">
+          <app-experiencia [view]="'jobs'"></app-experiencia>
+        </div>
+
+        <div *ngIf="activeExperience === 'studies'">
+          <app-experiencia [view]="'studies'"></app-experiencia>
+        </div>
       </div>
     </main>
   `,
@@ -75,8 +77,10 @@ import { About } from './about/about';
 })
 export class App {
   activeSection: 'cv' | 'about' | 'skills' | 'experience' = 'cv';
+  activeExperience: 'jobs' | 'studies' = 'jobs';
 
   showSection(section: 'cv' | 'about' | 'skills' | 'experience') {
     this.activeSection = section;
+    if (section === 'experience') this.activeExperience = 'jobs'; // por defecto
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,6 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class Experiencia {
   experienciaVisible = true;
+
+  // ✅ Nuevo Input para seleccionar vista: 'jobs' o 'studies'
+  @Input() view: 'jobs' | 'studies' = 'jobs';
 
   items = [
     {
@@ -30,5 +33,26 @@ export class Experiencia {
 
   toggleExperiencia() {
     this.experienciaVisible = !this.experienciaVisible;
+  }
+
+  // ✅ Filtro para mostrar solo jobs o studies
+  get filteredItems() {
+    if (this.view === 'jobs') {
+      return this.items.filter(item => item.titulo.includes('Backend') || item.titulo.includes('Dev'));
+    } else {
+      // aquí podrías agregar items de estudios si los tienes
+      return [
+        {
+          titulo: 'Computer Science - Universidad Francisco Marroquín',
+          descripcion: 'Licenciatura en Computer Science',
+          abierto: false
+        },
+        {
+          titulo: 'Curso de Angular',
+          descripcion: 'Aprendizaje práctico de Angular 20',
+          abierto: false
+        }
+      ];
+    }
   }
 }
