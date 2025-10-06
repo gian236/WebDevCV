@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { inject } from '@angular/core';
 import { ThemeService } from '../theme.service';
 
 @Component({
@@ -7,30 +8,33 @@ import { ThemeService } from '../theme.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.html',
-  styleUrl: './header.css',
+  styleUrls: ['./header.css'],
 })
 export class Header implements OnInit {
   saludo = '';
   darkMode = false;
 
-  constructor(private themeService: ThemeService) {}
+  // Usamos inject() en lugar de constructor para Angular 20
+  private themeService = inject(ThemeService);
 
-ngOnInit() {
-  const hora = new Date().getHours();
+  ngOnInit() {
+    // Determinar saludo según hora
+    const hora = new Date().getHours();
+    if (hora >= 6 && hora < 12) {
+      this.saludo = '¡Buenos días!';
+    } else if (hora >= 12 && hora < 18) {
+      this.saludo = '¡Buenas tardes!';
+    } else if (hora >= 18 && hora < 22) {
+      this.saludo = '¡Buenas noches!';
+    } else {
+      this.saludo = '¡Buenas madrugadas!';
+    }
 
-  if (hora >= 6 && hora < 12) {
-    this.saludo = '¡Buenos días!';
-  } else if (hora >= 12 && hora < 18) {
-    this.saludo = '¡Buenas tardes!';
-  } else if (hora >= 18 && hora < 22) {
-    this.saludo = '¡Buenas noches!';
-  } else {
-    this.saludo = '¡Buenas madrugadas!';
+    // Suscribirse al estado de modo oscuro
+    this.themeService.darkMode$.subscribe((active: boolean) => {
+      this.darkMode = active;
+    });
   }
-
-  this.themeService.darkMode$.subscribe((active) => (this.darkMode = active));
-}
-
 
   toggleTheme() {
     this.themeService.toggleTheme();

@@ -1,0 +1,89 @@
+/* ---------- ESTRUCTURA DEL CV (como antes) ---------- */
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cv-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- NAVBAR DE SECCIONES ---------- */
+.cv-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.cv-navbar button {
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.cv-navbar button:hover {
+  background-color: #3498db;
+  transform: scale(1.05);
+}
+
+.cv-navbar button.active {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ---------- MODO OSCURO ---------- */
+:host-context(.dark-mode) .cv-navbar button {
+  background-color: #1e293b;
+  color: #f1c40f;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.15);
+}
+
+:host-context(.dark-mode) .cv-navbar button:hover,
+:host-context(.dark-mode) .cv-navbar button.active {
+  background-color: #f1c40f;
+  color: #1e293b;
+}
+
+/* ---------- SECCIÓN ABOUT ---------- */
+.about-section {
+  padding: 40px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ---------- SECCIONES NUEVAS ---------- */
+
+.skills-section, .experience-section {
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Modo oscuro */
+:host-context(.dark-mode) .skills-section,
+:host-context(.dark-mode) .experience-section {
+  background-color: #0f172a;
+  color: #f1c40f;
+}
