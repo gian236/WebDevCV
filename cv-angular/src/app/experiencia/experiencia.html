@@ -1,13 +1,13 @@
-<div *ngIf="experienciaVisible">
-  <div *ngFor="let item of filteredItems" class="experiencia-item">
-    <h4 (click)="toggleItem(item)" style="cursor: pointer;">
+<div *ngIf="experienciaVisible" class="experiencia-list">
+  <div *ngFor="let item of filteredItems" class="experiencia-item card mb-2 p-3 shadow-sm">
+    <h4 (click)="toggleItem(item)" class="experiencia-title" style="cursor: pointer;">
       {{ item.titulo }}
-      <span>{{ item.abierto ? '▲' : '▼' }}</span>
+      <span class="float-end">{{ item.abierto ? '▲' : '▼' }}</span>
     </h4>
-    <p *ngIf="item.abierto">{{ item.descripcion }}</p>
+    <p *ngIf="item.abierto" class="experiencia-description mt-2">{{ item.descripcion }}</p>
   </div>
 </div>
 
-<button (click)="toggleExperiencia()" class="btn btn-sm mt-2">
+<button (click)="toggleExperiencia()" class="btn btn-sm btn-primary mt-3">
   {{ experienciaVisible ? 'Ocultar Experiencia' : 'Mostrar Experiencia' }}
 </button>
