@@ -1,0 +1,69 @@
+.proyectos-container {
+  padding: 20px;
+}
+
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.repo-card {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.repo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.light-card {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.dark-card {
+  background-color: #1e293b;
+  color: #f1c40f;
+}
+
+.repo-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.repo-description {
+  margin: 8px 0;
+}
+
+.repo-link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.repo-link:hover {
+  text-decoration: underline;
+}
+
+.repo-stars {
+  float: right;
+  font-weight: bold;
+}
+
+.dark-text {
+  color: #f1c40f;
+}
+
+.light-text {
+  color: #212529;
+}
+
+.loading, .error {
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
+}

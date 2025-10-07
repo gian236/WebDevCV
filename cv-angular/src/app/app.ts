@@ -9,6 +9,7 @@ import { SoftSkills } from './soft-skills/soft-skills';
 import { Experiencia } from './experiencia/experiencia';
 import { Download } from './download/download';
 import { About } from './about/about';
+import { Proyectos } from './proyectos/proyectos';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ import { About } from './about/about';
     CommonModule,
     Header, Contacto, Lenguajes,
     Educacion, Tecnologias, SoftSkills,
-    Experiencia, Download, About
+    Experiencia, Download, About, Proyectos
   ],
   template: `
     <app-header></app-header>
@@ -41,6 +42,7 @@ import { About } from './about/about';
           <app-tecnologias></app-tecnologias>
           <app-soft-skills></app-soft-skills>
           <app-experiencia></app-experiencia>
+          <app-proyectos></app-proyectos>
           <app-download></app-download>
         </div>
       </div>
@@ -71,6 +73,7 @@ import { About } from './about/about';
           <app-experiencia [view]="'studies'"></app-experiencia>
         </div>
       </div>
+
     </main>
   `,
   styleUrl: './app.css'

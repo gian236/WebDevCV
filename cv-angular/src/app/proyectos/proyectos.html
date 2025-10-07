@@ -1,0 +1,20 @@
+<div class="proyectos-container">
+  <h2 [ngClass]="{ 'dark-text': darkMode, 'light-text': !darkMode }">Mis Proyectos</h2>
+
+  <div *ngIf="loading" class="loading" [ngClass]="{ 'dark-text': darkMode, 'light-text': !darkMode }">
+    Cargando proyectos...
+  </div>
+
+  <div *ngIf="error" class="error" [ngClass]="{ 'dark-text': darkMode, 'light-text': !darkMode }">
+    {{ error }}
+  </div>
+
+  <div class="repos-grid">
+    <div *ngFor="let repo of repos" class="repo-card" [ngClass]="{ 'dark-card': darkMode, 'light-card': !darkMode }">
+      <h4 class="repo-name">{{ repo.name }}</h4>
+      <p class="repo-description">{{ repo.description }}</p>
+      <a [href]="repo.html_url" target="_blank" class="repo-link">Ver repositorio</a>
+      <span class="repo-stars">⭐ {{ repo.stargazers_count }}</span>
+    </div>
+  </div>
+</div>
