@@ -10,6 +10,12 @@ import { Experiencia } from './experiencia/experiencia';
 import { Download } from './download/download';
 import { About } from './about/about';
 import { Proyectos } from './proyectos/proyectos';
+import { Nasa } from './nasa/nasa';
+
+
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -18,7 +24,7 @@ import { Proyectos } from './proyectos/proyectos';
     CommonModule,
     Header, Contacto, Lenguajes,
     Educacion, Tecnologias, SoftSkills,
-    Experiencia, Download, About, Proyectos
+    Experiencia, Download, About, Proyectos, Nasa
   ],
   template: `
     <app-header></app-header>
@@ -43,6 +49,7 @@ import { Proyectos } from './proyectos/proyectos';
           <app-soft-skills></app-soft-skills>
           <app-experiencia></app-experiencia>
           <app-proyectos></app-proyectos>
+          <app-nasa></app-nasa>
           <app-download></app-download>
         </div>
       </div>
@@ -84,6 +91,6 @@ export class App {
 
   showSection(section: 'cv' | 'about' | 'skills' | 'experience') {
     this.activeSection = section;
-    if (section === 'experience') this.activeExperience = 'jobs'; // por defecto
+    if (section === 'experience') this.activeExperience = 'jobs'; 
   }
 }
