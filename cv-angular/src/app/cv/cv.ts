@@ -8,7 +8,7 @@ import { Tecnologias } from '../tecnologias/tecnologias';
 import { SoftSkills } from '../soft-skills/soft-skills';
 import { Experiencia } from '../experiencia/experiencia';
 import { Download } from '../download/download';
-import { ThemeService } from '../theme.service'; // si lo usa algún componente
+import { ThemeService } from '../theme.service'; 
 
 @Component({
   selector: 'app-cv',
@@ -40,5 +40,6 @@ import { ThemeService } from '../theme.service'; // si lo usa algún componente
       </div>
     </div>
   `,
+  styleUrls: ['./cv.css']
 })
 export class CV {}

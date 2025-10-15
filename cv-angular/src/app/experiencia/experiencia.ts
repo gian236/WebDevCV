@@ -1,31 +1,59 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CapitalizePipe } from '../pipes/capitalize.pipe'; // 🔹 importa el pipe
+import { ActivatedRoute } from '@angular/router';
+import { CapitalizePipe } from '../pipes/capitalize.pipe';
 
 @Component({
   selector: 'app-experiencia',
   standalone: true,
-  imports: [CommonModule, CapitalizePipe], // 🔹 agrega el pipe aquí
+  imports: [CommonModule, CapitalizePipe],
   templateUrl: './experiencia.html',
   styleUrls: ['./experiencia.css']
 })
 export class Experiencia {
   experienciaVisible = true;
+  view: 'jobs' | 'studies' = 'jobs';
+  items: any[] = [];
 
-  @Input() view: 'jobs' | 'studies' = 'jobs';
+  constructor(private route: ActivatedRoute) {}
 
-  items = [
-    {
-      titulo: 'Startup Jungle - Desarrollador Backend (Jun 2024 - Actualidad)',
-      descripcion: 'desarrollo backend con python y fastapi, gestión de bases de datos postgresql, despliegues en aws.',
-      abierto: false
-    },
-    {
-      titulo: 'Tech Solutions GT - Practicante Backend (Ene 2023 - May 2024)',
-      descripcion: 'soporte en desarrollo backend, manejo de apis y bases de datos.',
-      abierto: false
+  ngOnInit() {
+    // 🔹 Carga los datos iniciales según la ruta
+    this.route.data.subscribe(data => {
+      this.view = data['view'] || 'jobs';
+      this.loadItems();
+    });
+  }
+
+  loadItems() {
+    if (this.view === 'jobs') {
+      this.items = [
+        {
+          titulo: 'Startup Jungle - Desarrollador Backend (Jun 2024 - Actualidad)',
+          descripcion: 'Desarrollo backend con Python y FastAPI, gestión de bases de datos PostgreSQL, despliegues en AWS.',
+          abierto: false
+        },
+        {
+          titulo: 'Tech Solutions GT - Practicante Backend (Ene 2023 - May 2024)',
+          descripcion: 'Soporte en desarrollo backend, manejo de APIs y bases de datos.',
+          abierto: false
+        }
+      ];
+    } else {
+      this.items = [
+        {
+          titulo: 'Computer Science - Universidad Francisco Marroquín',
+          descripcion: 'Licenciatura en Computer Science',
+          abierto: false
+        },
+        {
+          titulo: 'Curso de Angular',
+          descripcion: 'Aprendizaje práctico de Angular 20',
+          abierto: false
+        }
+      ];
     }
-  ];
+  }
 
   toggleItem(item: any) {
     item.abierto = !item.abierto;
@@ -33,24 +61,5 @@ export class Experiencia {
 
   toggleExperiencia() {
     this.experienciaVisible = !this.experienciaVisible;
-  }
-
-  get filteredItems() {
-    if (this.view === 'jobs') {
-      return this.items.filter(item => item.titulo.includes('Backend') || item.titulo.includes('Dev'));
-    } else {
-      return [
-        {
-          titulo: 'Computer Science - Universidad Francisco Marroquín',
-          descripcion: 'licenciatura en computer science',
-          abierto: false
-        },
-        {
-          titulo: 'Curso de Angular',
-          descripcion: 'aprendizaje práctico de angular 20',
-          abierto: false
-        }
-      ];
-    }
   }
 }

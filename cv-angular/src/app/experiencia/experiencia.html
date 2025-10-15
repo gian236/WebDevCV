@@ -1,15 +1,19 @@
-<div *ngIf="experienciaVisible" class="experiencia-list">
-  <div *ngFor="let item of filteredItems" class="experiencia-item card mb-2 p-3 shadow-sm">
-    <h4 (click)="toggleItem(item)" class="experiencia-title" style="cursor: pointer;">
-      <!-- Pipe uppercase para el título -->
-      {{ item.titulo | uppercase }}
-      <span class="float-end">{{ item.abierto ? '▲' : '▼' }}</span>
-    </h4>
-    <!-- Pipe capitalize personalizado para la descripción -->
-    <p *ngIf="item.abierto" class="experiencia-description mt-2">{{ item.descripcion | capitalize }}</p>
-  </div>
-</div>
+<div id="experiencia">
+  <h2>Experiencia</h2>
 
-<button (click)="toggleExperiencia()" class="btn btn-sm btn-primary mt-3">
-  {{ experienciaVisible ? 'Ocultar Experiencia' : 'Mostrar Experiencia' }}
-</button>
+  <div *ngIf="experienciaVisible">
+    <div *ngFor="let item of items" class="experiencia-item" (click)="toggleItem(item)">
+      <div class="experiencia-title">
+        <span>{{ item.titulo | uppercase }}</span>
+        <span>{{ item.abierto ? '▲' : '▼' }}</span>
+      </div>
+      <p *ngIf="item.abierto" class="experiencia-description">
+        {{ item.descripcion | capitalize }}
+      </p>
+    </div>
+  </div>
+
+  <button class="btn toggle-btn" (click)="toggleExperiencia()">
+    {{ experienciaVisible ? 'Ocultar Experiencia' : 'Mostrar Experiencia' }}
+  </button>
+</div>

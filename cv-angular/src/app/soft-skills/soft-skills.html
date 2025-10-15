@@ -7,11 +7,10 @@
     class="form-control mb-3"
     placeholder="Buscar habilidad..." />
 
-  <div class="tags">
-    <span *ngFor="let skill of filteredSkills">
-      <span [innerHTML]="highlight(skill, searchTerm)"></span>
-    </span>
-  </div>
+<div class="tags">
+  <span *ngFor="let skill of filteredSkills" [innerHTML]="highlight(skill, searchTerm)"></span>
+</div>
+
 
   <div *ngIf="filteredSkills.length === 0" class="mt-2 text-muted" id="noSkillsMessage">
     No se encontraron habilidades.

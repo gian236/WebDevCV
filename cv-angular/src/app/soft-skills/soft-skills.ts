@@ -31,4 +31,5 @@ export class SoftSkills {
     const regex = new RegExp(`(${escapedTerm})`, 'gi');
     return skill.replace(regex, `<mark>$1</mark>`);
   }
+
 }

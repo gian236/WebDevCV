@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
         web, el aprendizaje continuo y la tecnología.
       </p>
     </section>
-  `
+  `, 
+  styleUrls: ['./about.css']
 })
 export class About {}
