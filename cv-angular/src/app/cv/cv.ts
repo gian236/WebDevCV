@@ -9,6 +9,8 @@ import { SoftSkills } from '../soft-skills/soft-skills';
 import { Experiencia } from '../experiencia/experiencia';
 import { Download } from '../download/download';
 import { ThemeService } from '../theme.service'; 
+import { HttpClientModule } from '@angular/common/http';
+import { Skills } from '../skills/skills';
 
 @Component({
   selector: 'app-cv',
@@ -22,7 +24,8 @@ import { ThemeService } from '../theme.service';
     Tecnologias,
     SoftSkills,
     Experiencia,
-    Download
+    Download, 
+    Skills
   ],
   providers: [ThemeService],
   template: `
@@ -31,6 +34,7 @@ import { ThemeService } from '../theme.service';
         <app-contacto></app-contacto>
         <app-lenguajes></app-lenguajes>
         <app-educacion></app-educacion>
+        <app-skills></app-skills>
       </div>
       <div class="cv-column">
         <app-tecnologias></app-tecnologias>

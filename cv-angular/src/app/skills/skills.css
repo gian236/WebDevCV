@@ -1,0 +1,99 @@
+/* ---------------- CARD PRINCIPAL DE LA SECCIÓN ---------------- */
+#skills-section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;       /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+  text-align: center;
+}
+
+/* Dark mode para la card principal */
+:host-context(.dark-mode) #skills-section {
+  background: #2c3e50;
+  color: #f1f1f1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ---------------- TÍTULO DE LA SECCIÓN ---------------- */
+#skills-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2c3e50;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+  display: inline-block;
+  transition: color 0.4s, border-color 0.4s;
+}
+
+/* Dark mode para el título */
+:host-context(.dark-mode) #skills-section h2 {
+  color: #f1c40f;
+  border-left-color: #f1c40f;
+}
+
+/* ---------------- LISTA DE SKILLS ---------------- */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ---------------- CARD DE CADA SKILL ---------------- */
+.skill-card {
+  background: #fefefe;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+  text-align: left;
+}
+
+:host-context(.dark-mode) .skill-card {
+  background: #34495e;
+  color: #f1f1f1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Nombre de skill */
+.skill-name {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* ---------------- BARRA DE PROGRESO ---------------- */
+.progress {
+  background: #e0e0e0;
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.4s, background-color 0.4s, color 0.4s;
+  border-radius: 10px;
+}
+
+/* Dark mode para barra de progreso */
+:host-context(.dark-mode) .progress {
+  background: #2c3e50;
+}
+
+:host-context(.dark-mode) .progress-bar {
+  background-color: #f1c40f;
+  color: #2c3e50;
+}
