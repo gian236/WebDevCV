@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { SkillsService } from '../services/skills.service'; // Asegúrate de crear este servicio
 
 @Component({
   selector: 'app-skills',
@@ -14,15 +15,11 @@ export class Skills implements OnInit {
   loading = true;
   error = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private skillsService: SkillsService) {}
 
   ngOnInit() {
-    this.loadSkills();
-  }
-
-  loadSkills() {
     this.loading = true;
-    this.http.get<any[]>('http://localhost:3001/skills').subscribe({
+    this.skillsService.loadSkills().subscribe({
       next: data => {
         this.skills = data;
         this.loading = false;
