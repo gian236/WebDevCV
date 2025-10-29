@@ -1,12 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development</title>
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="icon" type="image/png" href="logogp.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gian Paolo Robelo Ávila - CV</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Bienvenidos a mi página web</h1>
-    <h2>Hola Mundo  !!!</h2>
+<header>
+  <button id="toggleTheme" class="btn btn-dark rounded-pill px-4 py-2 mb-3">
+    <i class="bi bi-moon-fill"></i> Modo oscuro
+  </button>
+
+  <img src="gpra.jpg" 
+       alt="Foto de Gian Paolo Robelo Ávila" 
+       class="img-fluid rounded-circle border border-4 border-white shadow-lg" 
+       width="150" height="150" />
+  <div>
+    <h1>Gian Paolo Robelo Ávila</h1>
+    <p id="saludo"></p> <!-- aquí irá el saludo dinámico -->
+    <p>Estudiante de Computer Science en la Universidad Francisco Marroquín | Guatemala | 21 años</p>
+  </div>
+</header>
+
+
+
+
+  <!-- GRID PRINCIPAL: dos columnas para organizar el CV -->
+  <div class="cv-grid">
+    <!-- Columna izquierda -->
+    <div class="cv-column">
+      <section id="contacto">
+        <h2>Enlaces</h2>
+
+        <!-- Botón dinámico -->
+        <button 
+          id="toggleContacto" 
+          class="btn btn-outline-primary rounded-pill px-4 py-2 mb-3" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#contactoContent"
+          aria-expanded="true"
+          aria-controls="contactoContent">
+          <i class="bi bi-eye-slash-fill"></i> Ocultar contacto
+        </button>
+
+        <!-- Contenido colapsable -->
+        <div id="contactoContent" class="collapse show">
+          <div class="d-flex flex-wrap gap-2 mt-2">
+
+            <a href="https://github.com/gian236" target="_blank" class="btn btn-outline-dark btn-lg">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/gian-paolo-robelo-%C3%A1vila-b953802a9/" target="_blank" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+
+            <a href="mailto:gianparobelo@ufm.edu" class="btn btn-outline-success btn-lg">
+              <i class="bi bi-envelope-fill"></i> Correo
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+
+
+  <section>
+    <h2>Lenguajes de Programación</h2>
+    
+    <div class="d-flex flex-wrap gap-2 mt-2">
+
+      <!-- Badges azules -->
+      <span class="badge bg-primary">C</span>
+      <span class="badge bg-primary">C#</span>
+      <span class="badge bg-primary">C++</span>
+
+      <!-- Badges verdes -->
+      <span class="badge bg-success">Java</span>
+      <span class="badge bg-success">JavaScript</span>
+      <span class="badge bg-success">TypeScript</span>
+
+      <!-- Badges naranjas -->
+      <span class="badge bg-warning text-dark">CSS</span>
+      <span class="badge bg-warning text-dark">HTML</span>
+
+      <!-- Badges morados -->
+      <span class="badge bg-secondary">Python</span>
+    </div>
+  </section>
+
+
+
+      <section id="educacion">
+        <!-- Sección Educación -->
+        <h2>Educación</h2>
+        <table>
+          <thead>
+            <tr><th>Año</th><th>Institución</th><th>Título obtenido</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2023 - 2026</td><td>Universidad Francisco Marroquín</td><td>Licenciatura en Computer Science</td></tr>
+            <tr><td>2011 - 2022</td><td>Colegio Decroly Americano</td><td>Bachillerato en Ciencias y Letras | High School</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="cv-column">
+      <section>
+        <!-- Sección Tecnologías Usadas -->
+        <h2>Tecnologías Usadas</h2>
+        <h3>Bases de Datos</h3>
+        <div class="tags"><span>Redis</span><span>ElasticSearch</span><span>PostgreSQL</span><span>SQLite</span><span>MySQL</span><span>MongoDB</span></div>
+        <h3>Contenedores y Orquestación</h3>
+        <div class="tags"><span>Docker</span></div>
+        <h3>Diseño</h3>
+        <div class="tags"><span>Figma</span></div>
+        <h3>Nube</h3>
+        <div class="tags"><span>AWS</span><span>S3</span><span>Azure</span></div>
+      </section>
+
+      <section>
+        <!-- Sección Soft Skills -->
+        <h2>Soft Skills</h2>
+          <!-- Input buscador -->
+        <input 
+          type="text" 
+          id="searchSkill" 
+          class="form-control mb-3" 
+          placeholder="Buscar habilidad...">
+        <div class="tags">
+          <span>Trabajo en equipo</span><span>Resolución de problemas</span><span>Adaptabilidad</span>
+          <span>Comunicación</span><span>Organización</span><span>Gestión del tiempo</span>
+          <span>Curiosidad</span><span>Aprendizaje continuo</span>
+          <span>Pensamiento crítico</span><span>Liderazgo</span>
+        </div>
+      </section>
+      
+
+      <section id="experiencia">
+        <h2>Experiencia Laboral</h2>
+        
+        <!-- Botón para mostrar/ocultar -->
+        <button 
+          id="toggleExperiencia" 
+          class="btn btn-outline-dark mb-3" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#experienciaContent"
+          aria-expanded="true"
+          aria-controls="experienciaContent">
+          Ocultar Experiencia
+        </button>
+
+        <!-- Contenedor colapsable -->
+        <div id="experienciaContent" class="collapse show">
+          <div class="accordion" id="experienciaAccordion">
+
+            <!-- Experiencia 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                  Startup Jungle - Desarrollador Backend (Jun 2024 - Actualidad)
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                <div class="accordion-body">
+                  Desarrollo backend con Python y FastAPI, gestión de bases de datos PostgreSQL, despliegues en AWS.
+                </div>
+              </div>
+            </div>
+
+            <!-- Experiencia 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                  Tech Solutions GT - Practicante Backend (Ene 2023 - May 2024)
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                <div class="accordion-body">
+                  Soporte en desarrollo backend, manejo de APIs y bases de datos.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="text-center my-4">
+        <a href="gpracv2.pdf" download 
+          class="btn btn-primary btn-lg shadow rounded-pill d-inline-block transition-transform"
+          style="transition: transform 0.2s;">
+          Descargar CV en PDF
+        </a>
+      </section>
+
+            <style>
+        .btn:hover {
+          transform: scale(1.05);
+        }
+      </style>
+
+
+
+    </div>
+  </div>
+
+<script src="script.js"></script>
 </body>
 </html>

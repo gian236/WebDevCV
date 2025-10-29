@@ -1,0 +1,16 @@
+<div class="countries-section" [class.dark-mode]="darkMode">
+  <h2 class="title">🌍 Algunos países del mundo</h2>
+
+  <div *ngIf="loading" class="loading">Cargando países...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="country-grid">
+    <div *ngFor="let c of countries" class="country-card">
+      <img [src]="c.flags.svg" [alt]="c.name.common" class="flag" />
+      <h3>{{ c.name.common }}</h3>
+      <p><strong>Capital:</strong> {{ c.capital?.[0] || 'N/A' }}</p>
+      <p><strong>Región:</strong> {{ c.region }}</p>
+      <p><strong>Población:</strong> {{ c.population | number }}</p>
+    </div>
+  </div>
+</div>

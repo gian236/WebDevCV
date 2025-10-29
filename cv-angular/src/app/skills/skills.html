@@ -1,0 +1,20 @@
+<section id="skills-section">
+  <h2>Habilidades Técnicas</h2>
+
+  <div *ngIf="loading" class="text-center">Cargando habilidades...</div>
+  <div *ngIf="error" class="text-center text-danger">{{ error }}</div>
+
+  <div class="skills-list" *ngIf="!loading && !error">
+    <div *ngFor="let skill of skills" class="skill-card">
+      <div class="skill-name">{{ skill.name | uppercase }} <small>({{ skill.category }})</small></div>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar"
+             [style.width.%]="skill.level"
+             [attr.aria-valuenow]="skill.level"
+             aria-valuemin="0" aria-valuemax="100">
+          {{ getLevelText(skill.level) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+/* ---------- MODO CLARO (por defecto) ---------- */
+section {
+  background: white;
+  color: #1e2a38;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background 0.4s, color 0.4s, border-color 0.4s;
+}
+
+h2 {
+  color: #2c3e50;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  transition: transform 0.2s, background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- MODO OSCURO ---------- */
+:host-context(.dark-mode) section {
+  background: #2c3e50;
+  color: #f1f1f1;
+}
+
+:host-context(.dark-mode) h2 {
+  color: #f1c40f;
+  border-left-color: #f1c40f;
+}
+
+/* Botones */
+:host-context(.dark-mode) .btn-outline-primary {
+  border-color: #f1c40f;
+  color: #f1c40f;
+}
+
+:host-context(.dark-mode) .btn-outline-primary:hover {
+  background: #f1c40f;
+  color: #2c3e50;
+}
+
+:host-context(.dark-mode) .btn-outline-dark {
+  border-color: #f1c40f;
+  color: #f1c40f;
+}
+
+:host-context(.dark-mode) .btn-outline-dark:hover {
+  background: #f1c40f;
+  color: #2c3e50;
+}
+
+:host-context(.dark-mode) .btn-outline-success {
+  border-color: #f1c40f;
+  color: #f1c40f;
+}
+
+:host-context(.dark-mode) .btn-outline-success:hover {
+  background: #f1c40f;
+  color: #2c3e50;
+}

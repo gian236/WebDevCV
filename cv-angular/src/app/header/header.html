@@ -1,0 +1,21 @@
+<header>
+  <button
+    class="btn rounded-pill px-4 py-2 mb-3"
+    [ngClass]="darkMode ? 'btn-light' : 'btn-dark'"
+    (click)="toggleTheme()">
+    <i class="bi" [ngClass]="darkMode ? 'bi-sun-fill' : 'bi-moon-fill'"></i>
+    {{ darkMode ? 'Modo claro' : 'Modo oscuro' }}
+  </button>
+
+  <img
+    src="gpra.jpg"
+    alt="Foto de Gian Paolo Robelo Ávila"
+    class="img-fluid rounded-circle border border-4 border-white shadow-lg"
+    width="150" height="150" />
+
+  <div>
+    <h1>Gian Paolo Robelo Ávila</h1>
+    <p>{{ saludo }}</p>
+    <p>Estudiante de Computer Science en la Universidad Francisco Marroquín | Guatemala | 21 años</p>
+  </div>
+</header>

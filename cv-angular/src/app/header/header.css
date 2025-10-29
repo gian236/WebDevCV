@@ -1,0 +1,60 @@
+/* ---------- MODO CLARO (por defecto) ---------- */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  transition: background 0.4s, color 0.4s;
+}
+
+header h1 {
+  margin: 10px 0 5px;
+  font-size: 2.5em;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+  }
+  header img {
+    margin-bottom: 0;
+  }
+  header h1,
+  header p {
+    margin-left: 20px;
+  }
+}
+
+/* ---------- MODO OSCURO ---------- */
+/* Este selector es la clave */
+:host-context(.dark-mode) header {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1c40f;
+}
+
+/* Opcional: cambia el borde blanco de la foto */
+:host-context(.dark-mode) header img {
+  border-color: #f1c40f !important;
+}
+
+/* Opcional: cambia el botón */
+:host-context(.dark-mode) header .btn-dark {
+  background-color: #f1c40f;
+  color: #1e293b;
+  border: none;
+}
+
+:host-context(.dark-mode) header .btn-dark:hover {
+  background-color: #ffe766;
+  color: #111;
+}

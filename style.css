@@ -1,0 +1,489 @@
+/* ---------------------
+   BODY
+--------------------- */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #eaf4fc, #ffffff);
+  color: #1e2a38;
+}
+
+/* ---------------------
+   HEADER
+   Flexbox para foto y textos
+--------------------- */
+header {
+  display: flex;
+  flex-direction: column; /* pantalla pequeña: columna */
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* header img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+  border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+} */
+
+header h1 {
+  margin: 10px 0 5px;
+  font-size: 2.5em;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row; /* pantalla grande: fila */
+    text-align: left;
+    gap: 20px;
+  }
+  header img { margin-bottom: 0; }
+  header h1, header p { margin-left: 20px; }
+}
+
+/* ---------------------
+   GRID PRINCIPAL DEL CV
+   2 columnas pantalla grande, 1 columna pantalla pequeña
+--------------------- */
+.cv-grid {
+  display: grid; /* usamos grid para layout general */
+  grid-template-columns: 1fr; /* 1 columna */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 900px) {
+  .cv-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+  }
+}
+
+/* ---------------------
+   COLUMNAS INTERNAS
+   Flexbox vertical para apilar secciones
+--------------------- */
+.cv-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ---------------------
+   SECCIONES
+   Tarjetas con sombra y borde redondeado
+--------------------- */
+.cv-column section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+h2 { 
+  margin-top: 0; 
+  color: #2c3e50;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+  font-size: 22px;
+}
+
+h3 { 
+  margin-bottom: 8px; 
+  color: #3498db; 
+}
+
+/* ---------------------
+   CHIPS / TAGS
+   Flexbox para distribuir los elementos
+--------------------- */
+.tags, .chips {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+  margin-top: 10px;
+}
+
+.tags span, .chip {
+  background: #3498db;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: transform 0.2s, background 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.tags span:hover, .chip:hover {
+  background: #2c3e50;
+  transform: scale(1.05);
+}
+
+/* ---------------------
+   TABLAS
+--------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  background: #3498db;
+  color: white;
+}
+
+tr:hover td {
+  background: #f1faff;
+}
+
+/* ---------------------
+   BOTÓN DE DESCARGA
+--------------------- */
+.download {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* .btn-download {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-download:hover {
+  background: #2c3e50;
+  transform: scale(1.05);
+} */
+
+/* ---------------------
+   RESPONSIVE IPHONE 14 PRO MAX
+   ancho 430px
+--------------------- */
+@media (max-width: 430px) {
+  /* GRID principal: 1 columna */
+  .cv-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  /* HEADER: flex vertical y texto más pequeño */
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 10px;
+  }
+
+  header img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    margin: 8px 0 4px;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  /* Secciones: padding reducido para caber en pantalla */
+  .cv-column section {
+    padding: 15px;
+  }
+
+  /* Títulos de sección más pequeños */
+  h2 {
+    font-size: 18px;
+    padding-left: 10px;
+    border-left-width: 4px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  /* Chips / Tags más compactas */
+  .tags span, .chip {
+    padding: 4px 10px;
+    font-size: 0.8em;
+  }
+
+  /* Botón descargar más pequeño */
+  .btn-download {
+    padding: 10px 18px;
+    font-size: 0.9em;
+  }
+
+  /* Tablas: ajustar fuente y padding */
+  th, td {
+    padding: 8px;
+    font-size: 0.8em;
+  }
+}
+
+/* ---------------------
+   RESPONSIVE IPAD PRO
+   ancho 1024px
+--------------------- */
+@media (max-width: 1024px) {
+  /* GRID principal: 2 columnas equilibradas */
+  .cv-grid {
+    grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  /* HEADER: flex horizontal o vertical dependiendo de espacio */
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 15px;
+  }
+
+  header img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 12px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    margin: 10px 0 5px;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+
+  /* Secciones: padding ajustado */
+  .cv-column section {
+    padding: 18px;
+  }
+
+  /* Títulos de sección */
+  h2 {
+    font-size: 20px;
+    padding-left: 10px;
+    border-left-width: 5px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+  /* Chips / Tags un poco más grandes que en móvil */
+  .tags span, .chip {
+    padding: 5px 12px;
+    font-size: 0.85em;
+  }
+
+  /* Botón descargar */
+  .btn-download {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+
+  /* Tablas: padding y fuente */
+  th, td {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+}
+/* ---------------------
+   Resolución Monitor 1920 x 1080: resoluciones normales 1200px a 1920px
+--------------------- */
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .cv-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columnas equilibradas */
+    gap: 40px;
+    padding: 0 50px;
+  }
+
+  header {
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 50px 50px;
+  }
+
+  header img {
+    width: 160px;
+    height: 160px;
+  }
+
+  header h1 {
+    font-size: 36px;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  .cv-column section {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 24px;
+    padding-left: 12px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .tags span, .chip {
+    padding: 6px 16px;
+    font-size: 0.9em;
+  }
+
+  .btn-download {
+    padding: 14px 30px;
+    font-size: 1.1em;
+  }
+
+  th, td {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
+
+/* ---------------------
+   Resolución pantalla laptop 2560 x 1600: resolución >1920px (2560px)
+--------------------- */
+@media (min-width: 1921px) {
+  .cv-grid {
+    grid-template-columns: 1.2fr 1.2fr; /* columnas más amplias para aprovechar espacio */
+    gap: 50px;
+    max-width: 1800px;
+    margin: 50px auto;
+    padding: 0 60px;
+  }
+
+  header {
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 60px 60px;
+  }
+
+  header img {
+    width: 180px;
+    height: 180px;
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  header p {
+    font-size: 1.3em;
+  }
+
+  .cv-column section {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+    padding-left: 14px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .tags span, .chip {
+    padding: 8px 18px;
+    font-size: 1em;
+  }
+
+  .btn-download {
+    padding: 16px 36px;
+    font-size: 1.2em;
+  }
+
+  th, td {
+    padding: 14px;
+    font-size: 1.05em;
+  }
+}
+
+.dark-mode {
+  background: #1e2a38;
+  color: white;
+}
+
+.dark-mode section {
+  background: #2c3e50;
+  color: white;
+}
+
+.dark-mode h2 {
+  border-left-color: #f1c40f;
+  color: #f1c40f;
+}
+
+body, section {
+  transition: background 0.4s, color 0.4s;
+}
+
+.dark-mode {
+  background: #1e2a38;
+  color: white;
+}
+
+.dark-mode section {
+  background: #2c3e50;
+  color: white;
+}
+
+.dark-mode h2 {
+  border-left-color: #f1c40f;
+  color: #f1c40f;
+}
+
+/* Highlight dentro de chips */
+mark {
+  background: #fff176; /* amarillo suave */
+  color: inherit;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+/* Mensaje "no encontrado" */
+#noSkillsMessage {
+  font-size: 0.95em;
+  color: #6c757d; /* text-muted */
+}

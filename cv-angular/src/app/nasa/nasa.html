@@ -1,0 +1,27 @@
+<div class="nasa-section" [class.dark-mode]="darkMode">
+  <h2 class="title">🚀 Imagen del día — NASA</h2>
+
+  <div *ngIf="loading" class="loading">Cargando imagen...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="apod" class="nasa-card">
+    <img
+      *ngIf="apod.media_type === 'image'"
+      [src]="apod.url"
+      [alt]="apod.title"
+      class="nasa-image"
+    />
+
+    <iframe
+      *ngIf="apod.media_type === 'video'"
+      [src]="apod.url"
+      frameborder="0"
+      allowfullscreen
+      class="nasa-video"
+    ></iframe>
+
+    <h3>{{ apod.title }}</h3>
+    <p class="date">{{ apod.date | date }}</p>
+    <p class="explanation">{{ apod.explanation }}</p>
+  </div>
+</div>

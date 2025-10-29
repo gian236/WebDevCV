@@ -1,0 +1,33 @@
+/* ---------- DARK MODE GLOBAL ---------- */
+.dark-mode {
+  background: #1e2a38;
+  color: white;
+  transition: background 0.4s, color 0.4s;
+}
+
+.dark-mode section {
+  background: #2c3e50;
+  color: white;
+}
+
+.dark-mode h2 {
+  border-left-color: #f1c40f;
+  color: #f1c40f;
+}
+
+/* Opcional: botones con tonos adaptados */
+.dark-mode .btn-dark {
+  background: #f1c40f;
+  color: #2c3e50;
+  border: none;
+}
+
+.dark-mode .btn-outline-primary {
+  border-color: #f1c40f;
+  color: #f1c40f;
+}
+
+.dark-mode .btn-outline-primary:hover {
+  background: #f1c40f;
+  color: #2c3e50;
+}

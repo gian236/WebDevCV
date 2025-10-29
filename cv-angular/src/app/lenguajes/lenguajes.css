@@ -1,0 +1,52 @@
+/* ---------- MODO CLARO (por defecto) ---------- */
+section {
+  background: white;
+  color: #1e2a38;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background 0.4s, color 0.4s;
+}
+
+h2 {
+  color: #2c3e50;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.badge {
+  font-size: 1em;
+  padding: 8px 14px;
+  border-radius: 12px;
+}
+
+/* ---------- MODO OSCURO ---------- */
+:host-context(.dark-mode) section {
+  background: #2c3e50;
+  color: #f1f1f1;
+}
+
+:host-context(.dark-mode) h2 {
+  color: #f1c40f;
+  border-left-color: #f1c40f;
+}
+
+/* Ajustes visuales para badges en modo oscuro */
+:host-context(.dark-mode) .badge.bg-primary {
+  background-color: #2563eb; /* azul oscuro */
+}
+
+:host-context(.dark-mode) .badge.bg-success {
+  background-color: #22c55e; /* verde brillante */
+}
+
+:host-context(.dark-mode) .badge.bg-warning {
+  background-color: #facc15; /* dorado */
+  color: #1e293b;
+}
+
+:host-context(.dark-mode) .badge.bg-secondary {
+  background-color: #8b5cf6; /* púrpura */
+}

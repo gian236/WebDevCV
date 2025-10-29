@@ -1,0 +1,41 @@
+.about {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: var(--bg-card); /* <-- variable para modo claro/oscuro */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-primary); /* <-- color de texto adaptativo */
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: var(--text-accent); /* título con color destacado */
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .about {
+    padding: 1.5rem;
+  }
+
+  .about h2 {
+    font-size: 1.6rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}

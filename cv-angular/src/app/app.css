@@ -1,0 +1,79 @@
+/* ------------------------- NAVBAR PRINCIPAL ------------------------- */
+.cv-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.cv-navbar button {
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.cv-navbar button:hover {
+  background-color: #3498db;
+  transform: scale(1.05);
+}
+
+.cv-navbar button.active {
+  background-color: #3498db;
+  font-weight: bold;
+}
+
+/* ------------------------- SUBMENÚ EXPERIENCE ------------------------- */
+.experience-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.experience-nav button {
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.experience-nav button:hover {
+  background-color: #3498db;
+  transform: scale(1.05);
+}
+
+.experience-nav button.active {
+  background-color: #3498db;
+  font-weight: bold;
+}
+
+/* ------------------------- DARK MODE ------------------------- */
+:host-context(.dark-mode) .cv-navbar button,
+:host-context(.dark-mode) .experience-nav button {
+  background-color: #1e293b;
+  color: #f1c40f;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.15);
+}
+
+:host-context(.dark-mode) .cv-navbar button:hover,
+:host-context(.dark-mode) .cv-navbar button.active,
+:host-context(.dark-mode) .experience-nav button:hover,
+:host-context(.dark-mode) .experience-nav button.active {
+  background-color: #f1c40f;
+  color: #1e293b;
+}

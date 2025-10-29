@@ -1,0 +1,79 @@
+#tecnologias {
+  background-color: var(--bg-card, #fff); /* Card principal */
+  color: var(--text-primary, #333);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  transition: background 0.4s, color 0.4s;
+}
+
+#tecnologias h2 {
+  font-size: 2rem;
+  color: var(--text-accent, #3498db);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-card {
+  margin-bottom: 1.5rem;
+}
+
+.section-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-accent, #3498db);
+  margin-bottom: 0.8rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags span {
+  display: inline-block;
+  background-color: var(--accent, #3498db);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tags span:hover {
+  transform: scale(1.05);
+  background-color: var(--accent-hover, #2c3e50);
+}
+
+/* DARK MODE */
+:host-context(.dark-mode) #tecnologias {
+  background-color: var(--bg-card-dark, #2c3e50);
+  color: var(--text-primary-dark, #f0f0f0);
+}
+
+:host-context(.dark-mode) #tecnologias h2 {
+  color: var(--accent-dark, #f1c40f);
+}
+
+:host-context(.dark-mode) .section-card h3 {
+  color: var(--accent-dark, #f1c40f);
+}
+
+:host-context(.dark-mode) .tags span {
+  background-color: #34495e;
+  color: #f1f1f1;
+}
+
+:host-context(.dark-mode) .tags span:hover {
+  background-color: #f1c40f;
+  color: #2c3e50;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #tecnologias {
+    padding: 1.5rem;
+  }
+}
